@@ -56,6 +56,11 @@
 .clicavel{
     cursor: pointer;
 }
+
+.title{
+    font-weight: 600;
+    font-size: 4rem;
+}
 .pokemons{
     list-style: none;
     padding: 0;
@@ -76,6 +81,7 @@
 .pokemon .name{
     text-transform: capitalize;
     font-weight: 600;
+    font-size: 1.5rem;
     margin-bottom: .25rem;
 }
 .pokemon .detail img{
@@ -99,7 +105,7 @@
 .pokemon .detail .types .type{
     color: white;
     padding: .25rem 1rem;
-    font-size: .625rem;
+    font-size: 1rem;
     margin: .25rem 0;
     border-radius: 1rem;
     filter: brightness(1.1);
@@ -110,6 +116,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .pagination{
@@ -128,7 +135,13 @@
   border-radius: 1rem;
   color: white;
   padding: .25rem .5rem;
-  font-size: .625rem;
+  font-size: 2rem;
+  transition: 1s;
+
+}
+
+.pagination button:hover{
+    background-color: #98d5d7;
 }
 
 .modal-background{
@@ -146,27 +159,103 @@
     position: fixed;
     margin: auto 0 0 0;
     border: none;
-    bottom: 0;
+
     border-radius: 2rem 2rem 0 0;
     background-color: rgb(255, 255, 255);
     left: 0; 
     right: 0;
     min-width: 100vw;
-    height: 60vh;
+    min-height: 100%;
 }
 .statistics:focus{
     border: none;
     outline: none;
 }
-.pokemonImage{
-    max-height: 50%;
 
+.container-image{
+    justify-content: center;
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+}
+
+.pokemonImage{
+    max-height: 300px;
     max-width:60%;
     object-fit: contain;
     display: flex;
     justify-self: center;
 }
 
+.close-modal{
+    border: solid 2px white;
+    background: rgba(61, 51, 33, 0.603);
+    color: rgb(255, 255, 255);
+    width: auto;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1rem 0 1rem 1rem;
+    padding: .625rem;
+    border-radius: 100px;
+}
+
+.name-modal{
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 2em;
+    margin: 0 0 1rem 1rem;
+    color: white;
+}
+
+.type-modal{
+    text-align: center;
+    display: inline-flex;
+    margin-right: .5rem;
+    min-width: 60px;
+    border-radius: 20px;
+    padding: .5rem;
+    filter: brightness(1.1);
+    font-size: 1rem;
+    color: white;
+}
+
+.tab {
+
+  overflow: hidden;
+  border-radius: 2rem 2rem 0 0;
+  background-color: transparent;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
 @media screen and (min-width: 380px){
     .pokemons{
         grid-template-columns: repeat(2, 1fr);
@@ -179,6 +268,12 @@
 }
 @media screen and (min-width: 992px){
     .pokemons{
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    }
+    .close-modal{
+        font-size: 2rem;
+    }
+    .name-modal{
+        font-size: 3rem;     
     }
 }

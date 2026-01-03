@@ -4,13 +4,13 @@
 }
 
 body{
-    background-color: #f6f8fc;
+    background: linear-gradient(97deg,rgba(16, 18, 20, 1) 0%, rgba(76, 178, 180, 1) 38%, rgba(110, 188, 202, 1) 58%);
 }
 
 .content{
     padding: 1rem;
     background-color: white;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
 }
 
